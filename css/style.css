@@ -1,0 +1,757 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: cinzel;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.cinzel {
+    font-family: "Cinzel", serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+  }
+  
+.montserrat {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  body {
+    margin: 0;
+    background-color: black;
+    color: white;
+    font-family: 'Cinzel', serif;
+    transition: background-color 0.5s ease, color 0.5s ease;
+    line-height: 1;
+   }
+  
+  body::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
+
+  .background-svg {
+    background-image: url('/assets/BG.svg');
+    background-repeat: no-repeat;
+    background-size: cover; /* or 100% auto / contain */
+    background-position: center;
+  }
+
+  body.light-mode {
+    background-color: white;
+    color: rgb(0, 0, 0);
+
+  }
+.left {
+  position: absolute;
+  left: 80px;
+}
+
+.middel {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.right {
+  position: absolute;
+  right: 80px;
+}
+
+      /*----------------------------------------------------------------------------------------------
+
+                                      *HEADER*         
+ 
+  ----------------------------------------------------------------------------------------------*/
+.header {
+  background-color: rgba(70, 70, 70, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+  .navbar {
+  display: flex;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: rgba(70, 70, 70, 0.03);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1);
+  max-height: 96px;
+}
+
+.light-mode .navbar {
+  background-color: rgba(245, 245, 245, 0.1);
+  color: rgba(10, 12, 16, 20);
+}
+
+.light-mode .nav-links a {
+  color: rgba(10, 12, 16, 20);
+  text-decoration: none;
+}
+
+.light-mode .bio {
+  color: rgb(0, 0, 0, 1);
+}
+
+.light-mode .logo-box .logo-naam {
+  color: rgba(10, 12, 16, 20);
+}
+
+.light-mode .view-more  {
+  color: rgba(10, 12, 16, 20);
+}
+
+.logo-box {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+.logo-img {
+  width: 40px;
+  height: auto;
+}
+
+.logo-box .logo-naam {
+  font-family: cinzel;
+  font-weight: 900;
+  font-size: 24px;
+  text-decoration: none; /* Ensures no underline for the text */
+  color: white; /* Ensures the text color matches the parent */
+}
+
+.nav-links {
+  display: flex;
+  justify-content: flex-end; /* Aligns items to the right */
+  gap: 1.5rem; /* Adds space between links */
+  flex-grow: 1; /* Ensures the links take up all available space before the theme toggle */
+}
+
+.nav-links a {
+  color: #ffffff;
+  font-weight: 500;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  transition: text-decoration-color 0.3s;
+}
+
+.nav-links a span {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 4px;
+  background-size: 100% 2px;
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  transition: background-size 0.3s;
+}
+
+.nav-links a span:hover {
+  background-image: radial-gradient(circle, #CDF07A, #2EEBAA, #000000);
+  background-size: 100% 5%;
+}
+
+.light-mode .nav-links a span:hover {
+  background-image: radial-gradient(circle, #CDF07A, #2EEBAA, #dcffdc);
+  background-size: 100% 5%;
+}
+
+.theme-toggle {
+  cursor: pointer;
+  margin-left: 1.5rem;
+}
+
+.theme-toggle img {
+  width: 29px;
+  height: 29px;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.theme-toggle:hover img {
+  opacity: 0.6;
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column; /* Stacks the navbar elements on smaller screens */
+    align-items: flex-start; /* Aligns them to the left */
+    padding: 1rem; /* Adjust padding for mobile */
+  }
+
+  .logo-box {
+    margin-bottom: 1rem;
+  }
+
+  .nav-links {
+    flex-direction: column; /* Makes links stack vertically */
+    gap: 1rem; /* Adjusts spacing between links */
+    align-items: flex-start; /* Aligns the links to the left */
+    width: 100%; /* Ensures full width for the nav links */
+  }
+
+  .theme-toggle {
+    margin-left: 0; /* Removes left margin on smaller screens */
+    margin-top: 1rem; /* Adds space between theme toggle and nav links */
+  }
+}
+
+
+    /*----------------------------------------------------------------------------------------------
+
+                                      *Section front page*         
+ 
+  ----------------------------------------------------------------------------------------------*/
+  .frontpage {
+    font-family: cinzel;
+    max-width: none;
+    margin: auto 0;
+    padding: 40px 80px;
+    text-align: left;
+    color: white;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center; /* Aligns items vertically */
+    gap: 25%;
+  }
+
+  .frontpage {
+    max-width: 800px;
+
+    position: relative;
+    overflow: visible; /* allow content to spill if needed */
+  }
+  
+  .container {
+    flex: 1; 
+    max-width: 100%; 
+  }
+
+  .title-front {
+    font-size: 64px;
+    font-weight: 400;
+    letter-spacing: 0;
+    margin-bottom: 0.5rem;
+    color: #aaa;
+  }
+  
+  .naam {
+    font-family: cinzel;
+    font-weight: 900;
+    font-size: 64px;
+    font-weight: bold;
+    letter-spacing: 19.2px;
+    margin: 0.5rem 0;
+    text-transform: lowercase;
+  }
+  
+  .bio {
+    font-size: 24px;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    color: #ffffff;
+    padding-top: 40px;
+  }
+
+  .image-container {
+    flex: 0 0 auto; 
+    align-items: right;
+    width: 100%;
+  }
+  
+  .profile-image { 
+    max-width: 100%; 
+    height: auto; 
+    margin-left: auto;
+  }
+
+
+    /*----------------------------------------------------------------------------------------------
+
+                                      *button styles*         
+ 
+  ----------------------------------------------------------------------------------------------*/
+  
+  .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    font-family: Montserrat;
+    display: inline-flex; /* This ensures proper alignment */
+    align-items: center; /* Align text and icon (if any) properly */
+    justify-content: center; /* Center the text inside the button */
+    position: relative;
+  }
+  
+  .btn.secondary {
+    color: rgb(0, 0, 0);
+    transition: all 0.3s ease-in-out;
+    background-color: #000000;
+    z-index: 1;
+  }
+  .animated-gradient-border {
+    position: relative;
+    border-radius: inherit; /* match element's radius */
+    display: inline-block; 
+    background: transparent;
+  }
+  
+  .animated-gradient-border::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: inherit;
+    background: linear-gradient(135deg, #00EEFF, #2EEBAA, #CDF07A, #00EEFF);
+    background-size: 600% auto;
+    animation: gradientMove 10s linear infinite;
+    z-index: -1;
+    transition: transform 0.3s ease-in-out;
+    transform-origin: center center; /* <- important */
+  }
+
+  .text-bubble:hover::before {
+    transform: scale(1.05); /* <- match parent's transform */
+  }
+  
+  .animated-gradient-border > * {
+    position: relative;
+    z-index: 1;
+
+  }
+  
+  @keyframes gradientMove {
+    0% {
+      background-position: 0% center;
+    }
+    100% {
+      background-position: 100% center;
+    }
+  }
+  
+  
+  .gradient-text {
+    background: linear-gradient(270deg, #00EEFF, #2EEBAA, #CDF07A, #00EEFF);
+    background-size: 600% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    animation: gradientMove 8s linear infinite;
+  }
+  
+  .btn:hover {
+    opacity: 0.30;
+  }
+  
+  @keyframes gradientMove {
+    0% {
+      background-position: 0% center;
+    }
+    100% {
+      background-position: 100% center;
+    }
+  }
+    /*----------------------------------------------------------------------------------------------
+
+                                      *Pop-UP*         
+ 
+----------------------------------------------------------------------------------------------*/
+  
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.75);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.popup-overlay.active {
+  display: flex;
+}
+
+.popup-box {
+  background-color: rgba(0, 7, 2, 0.9);
+  color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 90%;
+  width: 70%;
+  text-align: left;
+  box-shadow: 0 0 40px rgba(0, 122, 43, 0.4);
+}
+.popup-box h2, p {
+  margin: 0 0 1rem;
+  font-family: Montserrat, sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 24px;
+  line-height: 1.6;
+  margin: 0 auto 2rem;
+}
+
+.popup-box h2 {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+ 
+    /*----------------------------------------------------------------------------------------------
+
+                                      *Recent Projects*         
+ 
+----------------------------------------------------------------------------------------------*/
+.projects {
+  padding-top: 240px;
+  width: 100%;
+  height: 100%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 27px;
+}
+  
+  .title {
+  font-family: Montserrat, sans-serif;  
+  font-size: 48px;
+  font-weight: 700;
+  color: #00EEFF;
+  text-transform: uppercase;
+  line-height: 50px;
+  letter-spacing: 1.44px;
+  margin: 0;
+}
+ 
+  .line-separator {
+  width: 42px;
+  height: 0;
+  padding-bottom: 5px;
+  border-top: 1px solid #78F25A;
+  transform: rotate(90deg);
+  transform-origin: top left;
+}
+  
+.view-more {
+  font-family: Montserrat, sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.8);
+  text-transform: uppercase;
+  line-height: 50px;
+  letter-spacing: 0.72px;
+  text-decoration: none;
+}
+
+.view-more:hover {
+  background: linear-gradient(270deg, #00EEFF, #2EEBAA, #CDF07A, #00EEFF);
+  background-size: 600% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: gradientMove 8s linear infinite;
+}
+
+.carousel-container {
+  padding-top: 120px ;
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.carousel {
+  width: 100%;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 24px;
+  animation: scroll 30s linear infinite;
+  width: max-content;
+}
+
+.carousel-track a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+
+.carousel-track::after {
+  content: "";
+  display: flex;
+  gap: 24px;
+}
+
+
+.carousel-item {
+  flex: 0 0 auto;
+  width: 400px;
+  height: 300px;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 80px;
+  cursor: pointer;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.overlay-title {
+  position: absolute;
+  bottom: 2px;
+  left: 19px;
+  font-family: Montserrat, sans-serif;
+  font-size: 18px;
+  color: rgb(204, 0, 255);
+  display: flex;
+  gap: 4px;
+  line-height: 50px;
+  letter-spacing: 0.63px;
+}
+
+.overlay-title strong {
+  font-weight: 500;
+}
+
+.overlay-title span {
+  font-weight: 300;
+}
+
+.overlay-top {
+  position: absolute;
+  width: 100%;
+  height: 63px;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.3) 30%, rgba(9, 11, 14, 0) 95%);
+}
+
+.overlay-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 240px;
+  background: linear-gradient(145deg, rgba(120, 244, 104, 0.76) 0%, rgba(13, 13, 13, 0) 100%);
+  opacity: 0.2;
+  mix-blend-mode: lighten;
+}
+
+/* === Loop Animation === */
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+    /*----------------------------------------------------------------------------------------------
+
+                                      *Experience*         
+ 
+  ----------------------------------------------------------------------------------------------*/
+.experience {
+  display: flex;
+  gap: 27px;
+  padding-top:  450px;
+}
+  
+.experience-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 100px;
+  padding: 600px 80px 80px;
+  box-sizing: border-box;
+}
+  
+
+.text-bubble {
+  width: 240px;
+  height: 120px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  box-sizing: border-box;
+  margin: 0 auto;;
+  transition: transform 0.3s ease-in-out;
+  z-index: 1;
+}
+
+.text-bubble:hover {
+  cursor: default;
+transform: scale(1.05);
+  padding: 10px; /* increase as needed */
+  box-shadow: 0 0 50px rgba(48, 201, 81, 0.5);
+  transition: all 0.3s ease-in-out;
+}
+
+.light-mode .text-bubble {
+  background-color: rgba(255, 255, 255, 0.0001);
+  color: rgba(255, 255, 255, 0.0001);
+}
+
+.light-mode .text-title, .light-mode .text-subtitle {
+  background-color: rgba(255, 255, 255, 0.001);
+  color: rgb(255, 255, 255);
+}
+
+
+.text-title, .text-subtitle {
+  color: rgb(0, 0, 0);
+  font-size: 24px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  line-height: 28.8px;
+  text-align: center;
+}
+
+.text-subtitle {
+  font-size: 16px;
+  line-height: 22.4px;
+}
+    /*----------------------------------------------------------------------------------------------
+
+                                      *Experience*         
+ 
+  ----------------------------------------------------------------------------------------------*/
+
+.touch {
+  font-family: Montserrat, sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.8);
+  text-transform: uppercase;
+  line-height: 50px;
+  letter-spacing: 0.72px;
+}
+.footer-collumn {
+  display: flex;
+  flex-direction: column;
+}
+/* Center everything in the middle of the screen */
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+  padding: 100px 0;
+}
+
+/* Box container with animated gradient border */
+.boxes {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  border-radius: 6px;
+  background: linear-gradient(270deg, #00EEFF, #2EEBAA, #CDF07A, #00EEFF);
+  background-size: 600% 600%;
+  animation: gradientBorder 20s ease infinite;
+  padding: 2px; /* Acts like border */
+  box-sizing: border-box;
+}
+
+/* Inner content with transparent background (matching site bg) */
+.boxes a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  position: relative;
+  z-index: 1;
+}
+
+/* Optional: image inside the box */
+.boxes img {
+  width: 24px;
+  height: 24px;
+  z-index: 2;
+}
+
+/* Keyframes for animated gradient border */
+@keyframes gradientBorder {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.icon {
+  color: black;
+}
+
+/* In light mode, change to white */
+.light-mode .icon {
+  color: white;
+}
+.light-mode .touch {
+  color: rgb(0, 0, 0, 1);
+}
