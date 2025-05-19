@@ -39,7 +39,9 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 .cinzel {
     font-family: "Cinzel", serif;
     font-optical-sizing: auto;
@@ -507,7 +509,11 @@ table {
   color: transparent;
   animation: gradientMove 8s linear infinite;
 }
+/*----------------------------------------------------------------------------------------------
 
+                                      *Carousel*         
+ 
+----------------------------------------------------------------------------------------------*/
 .carousel-container {
   padding-top: 120px ;
   overflow: hidden;
@@ -539,7 +545,6 @@ table {
   gap: 24px;
 }
 
-
 .carousel-item {
   flex: 0 0 auto;
   width: 400px;
@@ -557,6 +562,61 @@ table {
   object-fit: cover;
   display: block;
 }
+
+/*----------------------------------------------------------------------------------------------
+
+                                      *Collum (old Carousel all-Project)*         
+ 
+----------------------------------------------------------------------------------------------*/
+
+.column-container {
+  padding-top: 120px;
+  width: 100%;
+  position: relative;
+}
+
+.column-container :hover {
+  transform: scale(1.05);
+  transition: all 0.3s ease-in-out;
+}
+
+.column-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+  max-width: 75%;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.column-item {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+
+.column-item :hover {
+  transform: scale(1.2);
+  transition: all 0.3s ease-in-out;
+}
+
+.column-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/*----------------------------------------------------------------------------------------------
+
+                                      *Carousel/Collum Style*         
+ 
+----------------------------------------------------------------------------------------------*/
 
 .overlay-title {
   position: absolute;
@@ -754,4 +814,124 @@ transform: scale(1.05);
 }
 .light-mode .touch {
   color: rgb(0, 0, 0, 1);
+}
+    /*----------------------------------------------------------------------------------------------
+
+                                      *responsivenes*         
+ 
+  ----------------------------------------------------------------------------------------------*/
+  @media (max-width: 768px) {
+  .frontpage {
+    flex-direction: column;
+    padding: 20px;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .title-front, .naam {
+    font-size: 2.5rem;
+    letter-spacing: normal;
+  }
+
+  .bio {
+    font-size: 18px;
+    padding-top: 20px;
+  }
+
+  .image-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .profile-image {
+    width: 70%;
+  }
+
+  .buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media (max-width: 1024px) {
+  .experience-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 200px;
+  }
+
+  .experience {
+    position: static !important;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .experience.left {
+    order: -1;  
+  }
+
+  .experience-cards {
+    padding: 0 40px 80px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  .buttons {
+    flex-direction: row;
+    align-items: center;
+  }
+  .carousel-item {
+    width: 280px;
+    height: 200px;
+    margin: 40px;
+  }
+  .wrapper {
+    flex-direction: row;
+    gap: 40px;
+    padding: 50px 0;
+  }
+  .bio {
+    font-size: 16px;
+    padding: 40px;
+    text-align: left;
+  }
+  .image-container {
+    width: 100%;
+    display: block;
+    justify-content: center;
+  }
+  .touch {
+    font-size: 18px;
+  }
+  .title {
+    font-size: 36px;
+  }
+
+}
+
+@media (max-width: 600px) {
+  .experience-cards {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 200px 20px 40px;
+  }
+
+  .text-bubble {
+    width: 75%;
+  }
+  .wrapper {
+    flex-direction: row;
+    gap: 40px;
+    padding: 50px 0;
+  }
+  .touch {
+    font-size: 15px;
+  }
+  .title {
+    font-size: 30px;
+  }
 }

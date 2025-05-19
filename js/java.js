@@ -64,8 +64,8 @@ icon.addEventListener("mouseleave", () => {
 
 const track = document.querySelector('.carousel-track');
 const items = track.innerHTML;
-track.innerHTML += items;
-track.innerHTML += items; // duplicate once for smooth loop
+track.innerHTML = items + items; // doubled once
+
 
 
 const loaderFrames = document.querySelectorAll('.loader-frame');
