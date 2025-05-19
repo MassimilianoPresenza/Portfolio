@@ -76,6 +76,13 @@ html {
     background-position: center;
   }
 
+  .backgroundp1 {
+    background-image: url('/assets/Background-P1.svg');
+    background-repeat: no-repeat;
+    background-size: cover; /* or 100% auto / contain */
+    background-position: center;
+  }
+
   body.light-mode {
     background-color: white;
     color: rgb(0, 0, 0);
@@ -285,6 +292,9 @@ html {
     margin: 0.5rem 0;
     text-transform: lowercase;
   }
+  .naam.gradient-text.project1-override {
+  letter-spacing: 0px;
+}
   
   .bio {
     font-size: 24px;
@@ -405,6 +415,13 @@ html {
   }
     /*----------------------------------------------------------------------------------------------
 
+                                      *IMG Lines*         
+ 
+----------------------------------------------------------------------------------------------*/
+
+  
+    /*----------------------------------------------------------------------------------------------
+
                                       *Pop-UP*         
  
 ----------------------------------------------------------------------------------------------*/
@@ -428,6 +445,7 @@ html {
 
 .popup-box {
   background-color: rgba(0, 7, 2, 0.9);
+  background-image: url('/assets/Background-popup.png');
   color: white;
   padding: 2rem;
   border-radius: 12px;
@@ -819,6 +837,30 @@ transform: scale(1.05);
   background-color: rgba(255, 255, 255, 0.2);
   color: rgb(0, 0, 0);
 }
+
+    /*----------------------------------------------------------------------------------------------
+
+                                      *Album*         
+ 
+  ----------------------------------------------------------------------------------------------*/
+  .project-album {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+ .project-album .btn {
+  margin-bottom: -75px; /* or more if needed */
+}
+  .project-album img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+    margin: 20px;
+  }
     /*----------------------------------------------------------------------------------------------
 
                                       *responsivenes*         
