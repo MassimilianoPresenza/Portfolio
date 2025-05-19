@@ -934,4 +934,28 @@ transform: scale(1.05);
   .title {
     font-size: 25px;
   }
+  .navbar {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo-box {
+    margin-bottom: 0;
+  }
+
+  .nav-links {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: flex-start;
+    width: auto;
+  }
+
+  .theme-toggle {
+    margin: 0;
+    align-self: center;
+    order: 2; /* ensures it comes after nav-links in wrap */
+  }
 }
