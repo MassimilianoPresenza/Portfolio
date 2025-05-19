@@ -991,10 +991,6 @@ transform: scale(1.05);
     grid-template-columns: repeat(2, 1fr);
     padding: 20px 20px 0px;
   }
-  .projects{
-    padding: 40px;
-  }
-
   .text-bubble {
     width: 100%;
   }
