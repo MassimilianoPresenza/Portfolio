@@ -876,6 +876,9 @@ transform: scale(1.05);
     grid-template-columns: repeat(2, 1fr);
     gap: 50px;
   }
+  .projects{
+    padding-top: 180px;    
+  }
 }
 
 
@@ -911,7 +914,8 @@ transform: scale(1.05);
   .title {
     font-size: 36px;
   }
-.navbar {
+
+  .navbar {
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
@@ -935,6 +939,10 @@ transform: scale(1.05);
     align-self: center;
     order: 2; /* ensures it comes after nav-links in wrap */
   }
+  .projects{
+    padding-top: 100px;    
+  }
+
 }
 
 @media (max-width: 600px) {
@@ -981,6 +989,9 @@ transform: scale(1.05);
     align-self: center;
     order: 2; /* ensures it comes after nav-links in wrap */
   }
+  .projects{
+    padding-top: 60px;    
+  }
 }
 @media (max-width: 500px) {
   .experience {
@@ -991,6 +1002,7 @@ transform: scale(1.05);
     grid-template-columns: repeat(2, 1fr);
     padding: 20px 20px 0px;
   }
+
   .text-bubble {
     width: 100%;
   }
