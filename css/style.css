@@ -982,3 +982,59 @@ transform: scale(1.05);
     order: 2; /* ensures it comes after nav-links in wrap */
   }
 }
+@media (max-width: 500px) {
+  .experience {
+    padding-top: 20px;
+    gap: 20px;
+  }
+  .experience-cards {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 20px 20px 0px;
+  }
+  .projects{
+    padding: 40px;
+  }
+
+  .text-bubble {
+    width: 100%;
+  }
+  .wrapper {
+    flex-direction: row;
+    gap: 40px;
+    padding: 20px 0;
+  }
+  .touch {
+    font-size: 15px;
+    justify-content: center;
+    padding: 10px 50px;
+    text-align: center;
+  }
+  .title {
+    font-size: 25px;
+  }
+  .navbar {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 10px;
+  }
+
+  .logo-box {
+    margin-bottom: 0;
+  }
+
+  .nav-links {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: flex-start;
+    width: auto;
+  }
+
+  .theme-toggle {
+    margin: 0;
+    align-self: center;
+    order: 2; /* ensures it comes after nav-links in wrap */
+  }
+}
