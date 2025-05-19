@@ -820,7 +820,7 @@ transform: scale(1.05);
                                       *responsivenes*         
  
   ----------------------------------------------------------------------------------------------*/
-    @media (max-width: 768px) {
+      @media (max-width: 768px) {
   .frontpage {
     flex-direction: column;
     padding: 20px;
@@ -880,9 +880,6 @@ transform: scale(1.05);
     padding-top: 180px;    
   }
 }
-
-
-
 @media (max-width: 768px) {
   .buttons {
     flex-direction: row;
@@ -1028,10 +1025,9 @@ transform: scale(1.05);
     font-size: 10px;
   }
   .projects{
-    justify-content: center;
     padding-top: 20px;
     font-size: 20px;
-    padding-left: 20px;
+    display: block;
   }
 
   .logo-box {
@@ -1053,6 +1049,7 @@ transform: scale(1.05);
   }
 
     .projects.footer-collumn{
+      display: inline-flex;
     padding-top: 20px;
     padding-left: 0px;
     font-size: 25px;
