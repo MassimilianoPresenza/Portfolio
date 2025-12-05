@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MassimilianoPresenza.nl</title>
+  <title>Generative ART</title>
 
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" type="image/logo" href="assets/logo.svg">
@@ -33,54 +33,61 @@
     </div>
   </header>
 
-<section class="project-album">
-    <a href="#" class="btn secondary animated-gradient-border" data-popup="about">ALBUM</a>
+<section class="project-album buttons">
+    <a href="#" class="btn secondary animated-gradient-border" data-popup="about" data-title="ALBUM">ALBUM</a>
+      <div class="popup-overlay" id="popup-overlay">
+        <div class="popup-box">
+          <h2 id="popup-title"></h2>
+          <div class="popup-content">
+        <img src="assets/album.png" alt="Album Project"/>
+          <button id="popup-close" class="btn secondary animated-gradient-border">Close</button>
+          </div>
+        </div>
+      </div>
     <div class="image-project1">
       <img src="assets/album-lines.png" alt="profilefoto" class="profile-image" />
     </div>
             <h2 class="title-front gradient-text">Project:</h2>
       <h1 class="naam gradient-text project1-override">GEN ART</h1>
   </section>
-
+<section class="project-description">
+  <p class="bio">
+       During this project, I found it really interesting that we were given a lot of creative freedom: we could create almost anything we wanted, as long as it was discussed with the artist. In the first week, we met the artist we would be working with.</p>
+<img src="assets/Scene1.png" class="album-img" />
+      <p class="bio">
+       The project lasted ten weeks, and we started without any prior knowledge about the artist or the technology involved. We learned to work with Processing (using P5.js), a programming language similar to JavaScript but with added libraries for features like frequency and BPM detection. This allowed us to create scenes that reacted to music or could be controlled using Arduino.</p>
+      <p class="bio">
+       Even though we had ten weeks, it went by really fast and the deadlines quickly started closing in. I wanted to create something inspired by black holes, based on my favorite movie Interstellar. I love space and black holes, so that became the main source of my inspiration.</p>
+      <p class="bio">
+       Throughout the project, I learned a lot, not only by myself but also by working with friends. We helped each other, which made the process less stressful.<br /> 
+<p class="bio">At the end of the ten weeks, we had a live performance together with the artist, where we presented and showcased the visual scenes we had created. We also had to explain what we made, how it worked, and how the visuals connected to the music in real-time.</p>
+<p class="bio">While working on the coding part, we were also required to conduct research. We did desk research on existing generative art projects, which we could remix or take inspiration from. This taught us how to back up our creative ideas with proper research, combining creativity with structured design thinking.</p>
+<p class="bio">The project was part of the Live Visuals for Live Music module, where we acted as VJs, designing generative visuals that reacted to live music performances. Our work was meant to create an immersive audiovisual experience for the audience. Using real-time systems and interactive designs, we explored how technology, sound, and visuals come together to create emotion and energy during live events.</p>
+<p class="bio">Overall, it was a really fun project, and definitely one of my favorite experiences so far!</p></section>  
     <section class="experience-section">
       <div class="experience left">
-        <h2 class="title gradient-text">Experience |</h2>
-        <span class="view-more">View More</span>
+        <h2 class="title gradient-text">Main Subjects learned  |</h2>
+        <span class="view-more">Below</span>
       </div>
 
       <div class="experience-cards">
         <div class="text-bubble animated-gradient-border">
-          <div class="text-title">CSS HTML JAVA</div>
-          <div class="text-subtitle">2+ Years</div>
-        </div>
-        <div class="text-bubble animated-gradient-border">
-          <div class="text-title">Spline 3D Web</div>
+          <div class="text-title">Arduino</div>
           <div class="text-subtitle">1 Year</div>
         </div>
         <div class="text-bubble animated-gradient-border">
-          <div class="text-title">Touch Designer</div>
-          <div class="text-subtitle">1+ Year</div>
+          <div class="text-title">PSJ5</div>
+          <div class="text-subtitle">1 Year</div>
         </div>
         <div class="text-bubble animated-gradient-border">
-          <div class="text-title">Figma</div>
+          <div class="text-title">Desk research</div>
+          <div class="text-subtitle">Periode 1.3</div>
+        </div>
+        <div class="text-bubble animated-gradient-border">
+          <div class="text-title">Design research</div>
           <div class="text-subtitle">2+ Years</div>
         </div>
-        <div class="text-bubble animated-gradient-border">
-          <div class="text-title">Marketing</div>
-          <div class="text-subtitle">MBO-4</div>
-        </div>
-        <div class="text-bubble animated-gradient-border">
-          <div class="text-title">Adobe</div>
-          <div class="text-subtitle">2 Years</div>
-        </div>
-        <div class="text-bubble animated-gradient-border">
-          <div class="text-title">Dutch</div>
-          <div class="text-subtitle">Native</div>
-        </div>
-        <div class="text-bubble animated-gradient-border">
-          <div class="text-title">English & German</div>
-          <div class="text-subtitle">Professional working</div>
-        </div>
+        
       </div>
 
     </section>
@@ -110,5 +117,5 @@
   </div>
   </footer>
 </body>
-
+  <script src="js/java.js" defer></script>
 </html>

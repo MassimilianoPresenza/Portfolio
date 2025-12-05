@@ -31,18 +31,18 @@ const frontButtons = document.querySelectorAll('.buttons a');
 frontButtons.forEach(btn => {
   btn.addEventListener('click', e => {
     e.preventDefault();
-    const type = btn.dataset.popup;
-    const popupTitle = document.getElementById('popup-title');
 
-    if (type === 'more') {
-      popupTitle.textContent = 'More Info About Me';
-    } else if (type === 'about') {
-      popupTitle.textContent = 'More Info About Me';
+    const popupTitle = document.getElementById('popup-title');
+    const title = btn.dataset.title; // <-- read custom title
+
+    if (title) {
+      popupTitle.textContent = title; // <-- set popup title
     }
 
     popupOverlay.classList.add('active');
   });
 });
+
 
 
 popupClose.addEventListener('click', () => {

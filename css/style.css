@@ -195,12 +195,12 @@ html {
 }
 
 .nav-links a span:hover {
-  background-image: radial-gradient(circle, #CDF07A, #2EEBAA, #000000);
+  background-image: radial-gradient(circle, #20E32A, #2EEBAA, #000000);
   background-size: 100% 5%;
 }
 
 .light-mode .nav-links a span:hover {
-  background-image: radial-gradient(circle, #CDF07A, #2EEBAA, #dcffdc);
+  background-image: radial-gradient(circle, #20E32A, #2EEBAA, #dcffdc);
   background-size: 100% 5%;
 }
 
@@ -363,13 +363,56 @@ html {
     right: -2px;
     bottom: -2px;
     border-radius: inherit;
-    background: linear-gradient(135deg, #00EEFF, #2EEBAA, #CDF07A, #00EEFF);
+    background: linear-gradient(135deg, #00EEFF, #2EEBAA, #20E32A, #00EEFF);
     background-size: 600% auto;
     animation: gradientMove 10s linear infinite;
     z-index: -1;
     transition: transform 0.3s ease-in-out;
     transform-origin: center center; /* <- important */
   }
+
+  .animated-gradient-border2 {
+  position: relative;
+  display: inline-block;
+  border-radius: 12px; /* your radius */
+  padding: 2px; /* thickness of animated border */
+}
+
+.animated-gradient-border2::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 2px; /* border thickness */
+  background: linear-gradient(135deg, #00EEFF, #2EEBAA, #20E32A, #00EEFF);
+  background-size: 600% auto;
+  animation: gradientMove 10s linear infinite;
+
+  /* Mask out the center so only the border shows */
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  z-index: 0;
+}
+
+.animated-gradient-border2 > * {
+  position: relative;
+  z-index: 1;
+  background: #000; /* the inside background */
+  border-radius: inherit;
+  padding: 20px; /* content padding */
+}
+
+@keyframes gradientMove {
+  0%   { background-position: 0% 50%; }
+  100% { background-position: 600% 50%; }
+}
+
 
   .text-bubble:hover::before {
     transform: scale(1.05); /* <- match parent's transform */
@@ -392,7 +435,7 @@ html {
   
   
   .gradient-text {
-    background: linear-gradient(270deg, #00EEFF, #2EEBAA, #CDF07A, #00EEFF);
+    background: linear-gradient(270deg, #00EEFF, #2EEBAA, #20E32A, #00EEFF);
     background-size: 600% auto;
     background-clip: text;
     -webkit-background-clip: text;
@@ -442,6 +485,8 @@ html {
 .popup-overlay.active {
   display: flex;
 }
+
+
 
 .popup-box {
   background-color: rgba(0, 7, 2, 0.9);
@@ -519,7 +564,7 @@ html {
 }
 
 .view-more:hover {
-  background: linear-gradient(270deg, #00EEFF, #2EEBAA, #CDF07A, #00EEFF);
+  background: linear-gradient(270deg, #00EEFF, #2EEBAA, #20E32A, #00EEFF);
   background-size: 600% auto;
   background-clip: text;
   -webkit-background-clip: text;
@@ -595,7 +640,8 @@ html {
 
 .column-container :hover {
   transform: scale(1.05);
-  transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in;
+  transition: all 0.3s ease-out;
 }
 
 .column-grid {
@@ -742,7 +788,7 @@ transform: scale(1.05);
 
 
 .text-title, .text-subtitle {
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   font-size: 24px;
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
@@ -788,7 +834,7 @@ transform: scale(1.05);
   height: 50px;
   position: relative;
   border-radius: 6px;
-  background: linear-gradient(270deg, #00EEFF, #2EEBAA, #CDF07A, #00EEFF);
+  background: linear-gradient(270deg, #00EEFF, #2EEBAA, #20E32A, #00EEFF);
   background-size: 600% 600%;
   animation: gradientBorder 20s ease infinite;
   padding: 2px; /* Acts like border */
@@ -861,6 +907,22 @@ transform: scale(1.05);
     transition: transform 0.3s ease-in-out;
     margin: 20px;
   }
+  .project-album .popup-content   {
+    width: 80%;
+    margin: 0 auto;
+
+
+  }
+  .album-img img {
+  max-width: 50%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+  margin: 20px 0;
+    border-radius: 50px;
+  border: 5px solid red;
+}
     /*----------------------------------------------------------------------------------------------
 
                                       *responsivenes*         
@@ -1210,4 +1272,115 @@ transform: scale(1.05);
     font-size: 12px;
     padding: 0.5rem 1rem;
   }
+}
+    /*----------------------------------------------------------------------------------------------
+
+                                      *Text-Bubble*         
+ 
+  ----------------------------------------------------------------------------------------------*/
+
+.text-bubble {
+  position: relative;
+  width: 240px;
+  height: 120px;
+  border-radius: 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 2px; /* Border thickness */
+  box-sizing: border-box;
+  margin: 0 auto;
+  transition: transform 0.3s ease-in-out;
+
+  z-index: 1;
+}
+
+/* Animated border */
+.text-bubble::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 2px;
+
+  background: linear-gradient(135deg, #00EEFF, #2EEBAA, #20E32A, #00EEFF);
+  background-size: 600% auto;
+  animation: gradientMove 10s linear infinite;
+
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+
+  z-index: 0;
+}
+
+/* Content container (inside bubble) */
+.text-bubble > * {
+  position: relative;
+  z-index: 1;
+
+  background: #00000000;
+  border-radius: inherit;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  box-sizing: border-box;
+}
+
+/* Hover effects */
+.text-bubble:hover {
+  cursor: default;
+  transform: scale(1.05);
+  box-shadow: 0 0 50px rgba(48, 201, 81, 0.5);
+}
+
+.text-bubble:hover::before {
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Light mode */
+.light-mode .text-bubble > * {
+  background-color: rgba(255, 255, 255, 0.01);
+}
+
+.light-mode .text-title,
+.light-mode .text-subtitle {
+  color: rgb(0, 0, 0);
+}
+
+/* Typography (unchanged) */
+.text-title,
+.text-subtitle {
+  color: rgb(255, 255, 255);
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+}
+
+.text-title {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 28.8px;
+}
+
+.text-subtitle {
+  font-size: 16px;
+  line-height: 22.4px;
+}
+
+/* Border animation keyframes */
+@keyframes gradientMove {
+  0%   { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
 }
