@@ -286,7 +286,7 @@ html {
   .naam {
     font-family: cinzel;
     font-weight: 900;
-    font-size: 64px;
+    font-size: 80px;
     font-weight: bold;
     letter-spacing: 19.2px;
     margin: 0.5rem 0;
@@ -313,6 +313,11 @@ html {
   
   .profile-image { 
     max-width: 100%; 
+    height: auto; 
+    margin-left: auto;
+  }
+    .project-image { 
+    max-width: 50%; 
     height: auto; 
     margin-left: auto;
   }
@@ -347,6 +352,7 @@ html {
     transition: all 0.3s ease-in-out;
     background-color: #000000;
     z-index: 1;
+    text-decoration: none;
   }
   .animated-gradient-border {
     position: relative;
@@ -910,19 +916,7 @@ transform: scale(1.05);
   .project-album .popup-content   {
     width: 80%;
     margin: 0 auto;
-
-
   }
-  .album-img img {
-  max-width: 50%;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease-in-out;
-  margin: 20px 0;
-    border-radius: 50px;
-  border: 5px solid red;
-}
     /*----------------------------------------------------------------------------------------------
 
                                       *responsivenes*         
@@ -1012,6 +1006,7 @@ transform: scale(1.05);
   .buttons {
     flex-direction: row;
     align-items: center;
+    text-decoration: none;
   }
   .carousel-item {
     width: 280px;

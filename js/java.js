@@ -76,3 +76,9 @@ const cycleFrames = () => {
   current = (current + 1) % loaderFrames.length;
   loaderFrames[current].classList.add('active');
 };
+function openFigma() {
+  window.open(
+    "https://www.figma.com/proto/bHXERWIqUFRyMuSYihKyoS/Carboon-Prototype?node-id=158-411&t=wo7j3w5Yy0rOauzf-1",
+    "_blank"
+  );
+}
