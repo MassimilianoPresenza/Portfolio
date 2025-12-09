@@ -50,7 +50,7 @@ html {
   }
   
 .montserrat {
-    font-family: "Montserrat", sans-serif;
+    font-family: "Montserrat";
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
@@ -340,7 +340,7 @@ html {
     border-radius: 4px;
     text-decoration: none;
     font-weight: 500;
-    font-family: Montserrat;
+    font-family: 'Montserrat', Regular;
     display: inline-flex; /* This ensures proper alignment */
     align-items: center; /* Align text and icon (if any) properly */
     justify-content: center; /* Center the text inside the button */
@@ -507,7 +507,7 @@ html {
 }
 .popup-box h2, p {
   margin: 0 0 1rem;
-  font-family: Montserrat, sans-serif;
+  font-family: 'Montserrat', Regular;
   font-size: 20px;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.8);
@@ -539,7 +539,7 @@ html {
 }
   
   .title {
-  font-family: Montserrat, sans-serif;  
+  font-family: 'Montserrat', Regular;  
   font-size: 48px;
   font-weight: 700;
   color: #00EEFF;
@@ -559,7 +559,7 @@ html {
 }
   
 .view-more {
-  font-family: Montserrat, sans-serif;
+  font-family: 'Montserrat', Regular;
   font-size: 24px;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.8);
@@ -692,7 +692,7 @@ html {
   position: absolute;
   bottom: 2px;
   left: 19px;
-  font-family: Montserrat, sans-serif;
+  font-family: 'Montserrat', Regular;
   font-size: 18px;
   color: rgb(204, 0, 255);
   display: flex;
@@ -776,7 +776,7 @@ html {
 
 .text-bubble:hover {
   cursor: default;
-transform: scale(1.05);
+  transform: scale(1.05);
   padding: 10px; /* increase as needed */
   box-shadow: 0 0 50px rgba(48, 201, 81, 0.5);
   transition: all 0.3s ease-in-out;
@@ -796,7 +796,7 @@ transform: scale(1.05);
 .text-title, .text-subtitle {
   color: rgb(255, 255, 255);
   font-size: 24px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', Regular;
   font-weight: 400;
   line-height: 28.8px;
   text-align: center;
@@ -813,7 +813,7 @@ transform: scale(1.05);
   ----------------------------------------------------------------------------------------------*/
 
 .touch {
-  font-family: Montserrat, sans-serif;
+  font-family: 'Montserrat', Regular;
   font-size: 24px;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.8);
@@ -1357,9 +1357,10 @@ transform: scale(1.05);
 
 /* Typography (unchanged) */
 .text-title,
-.text-subtitle {
+.text-subtitle
+.bio {
   color: rgb(255, 255, 255);
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', Regular;
   text-align: center;
 }
 
